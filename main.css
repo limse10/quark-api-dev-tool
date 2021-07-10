@@ -1,0 +1,14 @@
+body {
+  background-color: rgb(255, 249, 242);
+  font-family: nunito;
+}
+
+.text {
+  margin: auto;
+  width: fit-content;
+  height: fit-content;
+  font-size: 50px;
+  display: flex;
+  /* justify-content: center; */
+  /* align-items: center; */
+}
