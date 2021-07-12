@@ -6,6 +6,9 @@ let user_data = {
 
 const qrk_load_data = (data) => {
   user_data = data;
+  let target = document.querySelector("#data");
+  target.innerHTML = `data: ${Object.values(data)}`;
+  console.log();
   return user_data;
 };
 
