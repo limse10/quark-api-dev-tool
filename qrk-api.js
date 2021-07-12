@@ -4,6 +4,29 @@ let user_data = {
   title: "wassup",
 };
 
+window.addEventListener(
+  "message",
+  (event) => {
+    if (event.data.fn == "qrk_load_data") {
+      qrk_load_data(event.data.payload);
+    }
+  },
+  false
+);
+
+window.addEventListener(
+  "message",
+  (event) => {
+    if (event.data.fn == "qrk_save_data") {
+      event.source.postMessage(
+        { fn: "qrk_save_data", payload: user_data },
+        event.origin
+      );
+    }
+  },
+  false
+);
+
 const qrk_load_data = (data) => {
   user_data = data;
   let target = document.querySelector("#data");
