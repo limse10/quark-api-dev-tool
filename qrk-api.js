@@ -18,6 +18,7 @@ window.addEventListener(
   "message",
   (event) => {
     if (event.data.fn == "qrk_save_data") {
+      console.log("received");
       event.source.postMessage(
         { fn: "qrk_save_data", payload: user_data },
         event.origin
