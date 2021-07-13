@@ -7,6 +7,7 @@ let user_data = {
 window.addEventListener(
   "message",
   (event) => {
+    console.log("message received: ", event);
     if (event.data.fn == "qrk_load_data") {
       qrk_load_data(event.data.payload.data);
     }
