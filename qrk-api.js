@@ -13,7 +13,7 @@ window.addEventListener(
     if (event.data.fn == "qrk_save_data") {
       console.log("sending data...");
       event.source.postMessage(
-        { fn: "qrk_save_data", payload: user_data },
+        { fn: "qrk_save_data", payload: qrk_save_data() },
         event.origin
       );
     }
