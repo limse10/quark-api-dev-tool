@@ -8,17 +8,9 @@ window.addEventListener(
   "message",
   (event) => {
     if (event.data.fn == "qrk_load_data") {
-      qrk_load_data(event.data.payload);
+      qrk_load_data(event.data.payload.data);
     }
-  },
-  false
-);
-
-window.addEventListener(
-  "message",
-  (event) => {
     if (event.data.fn == "qrk_save_data") {
-      console.log("received");
       event.source.postMessage(
         { fn: "qrk_save_data", payload: user_data },
         event.origin
@@ -32,7 +24,7 @@ const qrk_load_data = (data) => {
   user_data = data;
   let target = document.querySelector("#data");
   target.innerHTML = `data: ${Object.values(data)}`;
-  console.log();
+  console.log("tool data ", data);
   return user_data;
 };
 
